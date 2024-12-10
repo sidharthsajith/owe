@@ -946,6 +946,9 @@ def generate_report(format):
 @app.route('/static/plots/<path:filename>')
 def serve_plot(filename):
     return send_file(f'static/plots/{filename}', mimetype='image/png')
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
